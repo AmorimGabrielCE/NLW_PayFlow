@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nlw_flutter/modules/login/login_controller.dart';
+import 'package:nlw_flutter/shared/auth/auth_controller.dart';
 import 'package:nlw_flutter/shared/themes/app_colors.dart';
 import 'package:nlw_flutter/shared/themes/app_images.dart';
 
@@ -7,6 +9,8 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authController = AuthController();
+    authController.currentUser(context);
     return Scaffold(
       backgroundColor: AppColors.background,
       body: Stack(
