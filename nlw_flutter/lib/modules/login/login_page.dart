@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:nlw_flutter/modules/login/login_controller.dart';
-import 'package:nlw_flutter/shared/social_login/social_login_button.dart';
 import 'package:nlw_flutter/shared/themes/app_colors.dart';
 import 'package:nlw_flutter/shared/themes/app_images.dart';
 import 'package:nlw_flutter/shared/themes/app_text_styles.dart';
+import 'package:nlw_flutter/shared/widgets/social_login/social_login_button.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
