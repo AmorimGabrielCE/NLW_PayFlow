@@ -2,10 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:nlw_flutter/shared/themes/app_colors.dart';
 import 'package:nlw_flutter/shared/themes/app_text_styles.dart';
 
-class InputTextWidgget extends StatelessWidget {
+class InputTextWidget extends StatelessWidget {
   final String label;
   final IconData icon;
-  const InputTextWidgget({Key? key, required this.label, required this.icon})
+  final String? initialValue;
+  final String? Function(String?)? validator;
+  final TextEditingController? controller;
+  final void Function(String value) onChanged;
+
+  const InputTextWidget(
+      {Key? key,
+      required this.label,
+      required this.icon,
+      this.initialValue,
+      this.validator,
+      this.controller,
+      required this.onChanged})
       : super(key: key);
 
   @override
@@ -15,6 +27,10 @@ class InputTextWidgget extends StatelessWidget {
       child: Column(
         children: [
           TextFormField(
+            controller: controller,
+            onChanged: onChanged,
+            initialValue: initialValue,
+            validator: validator,
             style: TextStyles.input,
             decoration: InputDecoration(
               contentPadding: EdgeInsets.zero,

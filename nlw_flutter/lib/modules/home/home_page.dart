@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nlw_flutter/modules/home/home_controller.dart';
+import 'package:nlw_flutter/shared/models/boleto_model.dart';
 import 'package:nlw_flutter/shared/themes/app_colors.dart';
 import 'package:nlw_flutter/shared/themes/app_text_styles.dart';
+import 'package:nlw_flutter/shared/widgets/boleto_tile/boleto_tile_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,6 +17,13 @@ class _HomePageState extends State<HomePage> {
   final pages = [
     Container(
       color: Colors.red,
+      child: BoletoTileWidget(
+        data: BoletoModel(
+            name: "Gabriel",
+            dueDate: "22/02/22",
+            value: 100,
+            barcode: "1233456789"),
+      ),
     ),
     Container(color: Colors.blue),
   ];
